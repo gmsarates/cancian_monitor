@@ -8,7 +8,7 @@ const vgmUrl= 'https://www.fernandocancian.com/imovel/?tipo=casa&finalidade=loca
 
 let last_text = null;
 
-// setTimeout(() => {
+setTimeout(() => {
     got(vgmUrl).then(response => {
       const dom = new JSDOM(response.body);
       let result = dom.window.document.querySelector('.lista_imoveis_paginacao .fontepadrao_cor_grande').textContent;
@@ -47,4 +47,4 @@ let last_text = null;
     }).catch(err => {
       console.log(err);
     });
-// }, 60000);
+}, 60000);
