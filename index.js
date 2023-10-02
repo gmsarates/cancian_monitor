@@ -35,18 +35,18 @@ setInterval(() => {
                 }
             );
 
-            // request.post(
-            //     'http://62.72.8.127:3333/message/text?key=CANCIAN', { json: {
-            //             "id": "555597157763",
-            //             "message": `Número de imóveis no site FERNANDO CANCIAN alterado: *${num} imóveis*`
-            //         } 
-            //     },
-            //     function (error, response, body) {
-            //         if (!error && response.statusCode == 200) {
-            //             console.log(body);
-            //         }
-            //     }
-            // );
+            request.post(
+                'http://62.72.8.127:3333/message/text?key=CANCIAN', { json: {
+                        "id": "555597157763",
+                        "message": `Número de imóveis no site FERNANDO CANCIAN alterado: *${num} imóveis*`
+                    } 
+                },
+                function (error, response, body) {
+                    if (!error && response.statusCode == 200) {
+                        console.log(body);
+                    }
+                }
+            );
         }
 
         console.log('FIM', '');
