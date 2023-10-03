@@ -9,9 +9,9 @@ const vgmUrl= 'https://www.fernandocancian.com/imovel/?tipo=casa&finalidade=loca
 let last_text = null;
 
 setInterval(() => {
+    console.log(new Date());
+    console.log('Consultando site...');
     got(vgmUrl).then(response => {
-        console.log(new Date());
-        console.log('Consultando site...');
         const dom = new JSDOM(response.body);
         let result = dom.window.document.querySelector('.lista_imoveis_paginacao .fontepadrao_cor_grande').textContent;
         let num = result.match(/(\d+)/g);
