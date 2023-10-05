@@ -7,7 +7,8 @@ const { JSDOM } = jsdom;
 const cancian = 'https://www.fernandocancian.com/imovel/?tipo=casa&finalidade=locacao';
 const rede = 'https://www.redeimobiliarias.com/aluguel/casas/';
 
-let last_text = null;
+let last_text_cancian = null;
+let last_text_rede = null;
 
 function notify(message) {
     console.log('Enviando via Whatsapp');
@@ -49,8 +50,8 @@ setInterval(() => {
         num = num[0];
 
         console.log(num, 'imóveis cadastrados');
-        if (last_text == null || result !== last_text) {
-            last_text = result;
+        if (last_text_cancian == null || result !== last_text_cancian) {
+            last_text_cancian = result;
             notify(`Número de imóveis no site FERNANDO CANCIAN alterado: *${num} imóveis*`);
         }
 
@@ -67,8 +68,8 @@ setInterval(() => {
         num = num[2];
 
         console.log(num, 'imóveis cadastrados');
-        if (last_text == null || result !== last_text) {
-            last_text = result;
+        if (last_text_rede == null || result !== last_text_rede) {
+            last_text_rede = result;
             notify(`Número de imóveis no site REDE alterado: *${num} imóveis*`);
         }
 
